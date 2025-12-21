@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Course — Cekaya</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Cekaya">
+        <img src="logo.png" alt="Logo" class="brand_logo"/>
+      </a>
+
+      <button id="navToggle" class="hamburger" type="button"
+        aria-label="Buka menu" aria-controls="navMenu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+
+      <div id="navMenu" class="menu">
+        <a data-nav href="index.html">Beranda</a>
+        <a data-nav href="course.html">Course</a>
+        <a data-nav href="tracker.html">Wealth Tracker</a>
+        <a data-nav href="tentang.html">Tentang</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="section">
+      <h1 class="h-title" style="font-size:32px">Modul Pembelajaran Fintech</h1>
+      <p class="h-sub">Setiap modul berisi: <b>artikel</b>, <b>video</b>, <b>infografis (download PNG)</b>, dan <b>kuis interaktif</b> di akhir.</p>
+
+      <div class="grid-2" id="moduleList"></div>
+    </section>
+
+    <div class="footer">Mulai dari Modul 1 lalu lanjut berurutan biar alurnya nyambung.</div>
+  </main>
+
+  <script type="module">
+    import { setActiveNav } from "./app.js";
+    import { modules } from "./course-data.js";
+
+    setActiveNav();
+    const wrap = document.querySelector("#moduleList");
+    wrap.innerHTML = modules.map(m => `
+      <div class="card soft">
+        <div class="pill">Modul ${m.id}</div>
+        <h3 style="margin:10px 0 6px">${m.title}</h3>
+        <p class="small" style="margin:0 0 12px">${m.desc}</p>
+        <div class="btns">
+          <a class="btn primary" href="modul.html?id=${m.id}">Pelajari Modul</a>
+        </div>
+      </div>
+    `).join("");
+  </script>
+
+  <script>
+    (function () {
+      const btn = document.getElementById("navToggle");
+      const menu = document.getElementById("navMenu");
+      if (!btn || !menu) return;
+
+      function setOpen(isOpen){
+        menu.classList.toggle("open", isOpen);
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      }
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        setOpen(!menu.classList.contains("open"));
+      });
+
+      document.addEventListener("click", (e) => {
+        const open = menu.classList.contains("open");
+        if (!open) return;
+        if (!menu.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+      });
+
+      menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setOpen(false)));
+
+      window.addEventListener("resize", () => {
+        if (window.matchMedia("(min-width:861px)").matches) setOpen(false);
+      });
+    })();
+  </script>
+</body>
+</html>

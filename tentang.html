@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Tentang — Cekaya</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Cekaya">
+        <img src="logo.png" alt="Logo" class="brand_logo"/>
+      </a>
+
+      <button id="navToggle" class="hamburger" type="button"
+        aria-label="Buka menu" aria-controls="navMenu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+
+      <div id="navMenu" class="menu">
+        <a data-nav href="index.html">Beranda</a>
+        <a data-nav href="course.html">Course</a>
+        <a data-nav href="tracker.html">Wealth Tracker</a>
+        <a data-nav href="tentang.html">Tentang</a>
+      </div>
+    </div>
+  </div>
+
+  <main class="container">
+    <section class="section">
+      <h1 class="h-title" style="font-size:32px">Tentang Cekaya</h1>
+      <div class="card soft">
+        <p style="margin-top:0"><b>Cekaya</b> adalah website edukasi fintech berbahasa Indonesia. Konten disusun menjadi 4 modul (artikel + video + infografis + kuis). Kami juga menambahkan fitur inovasi <b>Wealth Tracker</b> untuk simulasi kondisi keuangan berbasis rumus (non-AI).</p>
+        <hr/>
+        <p class="small" style="margin:0"><b>Disclaimer:</b> Semua informasi bersifat edukasi. Bukan pengganti saran profesional.</p>
+      </div>
+    </section>
+
+    <div class="footer">© 2025 Cekaya — Edukasi fintech & simulasi wealth tracker (non-AI).</div>
+  </main>
+
+  <script type="module">
+    import { setActiveNav } from "./app.js";
+    setActiveNav();
+  </script>
+
+  <script>
+    (function () {
+      const btn = document.getElementById("navToggle");
+      const menu = document.getElementById("navMenu");
+      if (!btn || !menu) return;
+
+      function setOpen(isOpen){
+        menu.classList.toggle("open", isOpen);
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      }
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        setOpen(!menu.classList.contains("open"));
+      });
+
+      document.addEventListener("click", (e) => {
+        const open = menu.classList.contains("open");
+        if (!open) return;
+        if (!menu.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+      });
+
+      menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setOpen(false)));
+
+      window.addEventListener("resize", () => {
+        if (window.matchMedia("(min-width:861px)").matches) setOpen(false);
+      });
+    })();
+  </script>
+</body>
+</html>
+

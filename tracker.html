@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Wealth Tracker — Cekaya</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="nav">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Cekaya">
+        <img src="logo.png" alt="Logo" class="brand_logo"/>
+      </a>
+
+      <button id="navToggle" class="hamburger" type="button"
+        aria-label="Buka menu" aria-controls="navMenu" aria-expanded="false">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      </button>
+
+      <div id="navMenu" class="menu">
+        <a data-nav href="index.html">Beranda</a>
+        <a data-nav href="course.html">Course</a>
+        <a data-nav href="tracker.html">Wealth Tracker</a>
+        <a data-nav href="tentang.html">Tentang</a>
+      </div>
+    </div>
+  </div>
+
+
+  <main class="container">
+    <section class="section">
+      <h1 class="h-title" style="font-size:32px">Wealth Tracker (Simulasi)</h1>
+      <p class="h-sub">Masukkan data keuangan untuk mendapat rekomendasi dasar. <b>Non-AI</b> (rule-based) dan data tidak disimpan.</p>
+
+      <div class="grid-2 tracker-grid">
+        <div class="card soft">
+          <form class="form" id="trackerForm">
+            <div class="field">
+              <label>Nama (opsional)</label>
+              <input name="nama" placeholder="Contoh: Putri"/>
+            </div>
+            <div class="field">
+              <label>Umur</label>
+              <input name="umur" type="number" required min="10" placeholder="Contoh: 21"/>
+            </div>
+            <div class="field">
+              <label>Jumlah tanggungan</label>
+              <input name="tanggungan" type="number" min="0" value="0" placeholder="Contoh: 2"/>
+              <div class="helper">Tanggungan = orang yang kamu biayai (anak/ortu/pasangan).</div>
+            </div>
+            <div class="field">
+              <label>Berapa total penghasilanmu setiap bulan?</label>
+              <input name="penghasilan" type="number" required min="0" placeholder="Contoh: 5000000"/>
+            </div>
+            <div class="field">
+              <label>Berapa pengeluaran rutin bulananmu (di luar cicilan utang)?</label>
+              <div class="helper">Geser slider di bawah. Maksimum disesuaikan dengan penghasilanmu. Step per geser: Rp100.000</div>
+            <div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-end;flex-wrap:wrap">
+              <div class="small">Rasio pengeluaran terhadap penghasilan</div>
+              <div style="text-align:right">
+                <div style="font-weight:800;font-size:18px" id="expenseLabel">Rp 0</div>
+                <div class="small"><span id="expensePct">0%</span></div>
+              </div>
+            </div>
+              <input id="expenseRange" type="range" min="0" max="0" value="0" step="100000"/>
+              <input name="pengeluaran" id="expenseHidden" type="hidden" value="0"/>
+            </div>
+            <div class="field">
+              <label>Berapa Cicilan yang kamu keluarkan per bulan?</label>
+              <input name="cicilan" type="number" required min="0" placeholder="Contoh: 500000"/>
+              <div class="helper">Dipakai untuk menghitung rasio cicilan.</div>
+            </div>
+            <div class="field">
+              <label>Berapa total uang dan tabungan yang kamu miliki sekarang?</label>
+              <input name="tabungan" type="number" min="0" placeholder="Contoh: 2000000"/>
+            </div>
+            <div class="field">
+              <label>Berapa total utang yang sedang kamu tanggung saat ini?</label>
+              <input name="utangTotal" type="number" min="0" placeholder="Contoh: 50000000"/>
+              <div class="helper">Utang total (misal: KPR, pinjol, kartu kredit, dll). Dipakai untuk menghitung kekayaan bersih.</div>
+            </div>
+            <div class="field">
+              <label>Status rumah</label>
+              <select name="rumah" required>
+                <option value="belum">Belum punya</option>
+                <option value="sudah">Sudah punya</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Estimasi harga rumah yang diincar (opsional, Rp)</label>
+              <input name="hargaRumah" type="number" min="0" placeholder="Contoh: 350000000"/>
+              <div class="helper">Kalau diisi, kami hitung estimasi cicilan sesuai tenor. Kalau kosong, kami tampilkan estimasi kemampuan maksimal kamu.</div>
+            </div>
+
+
+            <button class="btn primary" type="submit">Cek Kondisi Keuangan</button>
+            <p class="small" style="margin:0">*Perhitungan dilakukan di browser (tanpa database).</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <div class="footer">Catatan: fitur ini untuk edukasi dan latihan perencanaan sederhana.</div>
+  </main>
+
+  <div id="resultBackdrop" class="modal-backdrop hidden" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h3 id="modalTitle" class="modal-title">Hasil Wealth Tracker</h3>
+        <button id="modalClose" class="icon-btn" type="button" aria-label="Tutup">✕</button>
+      </div>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { setActiveNav } from "./app.js";
+    import { mountTracker } from "./tracker.js";
+    setActiveNav();
+    mountTracker();
+  </script>
+  
+  <script>
+    (function () {
+      const btn = document.getElementById("navToggle");
+      const menu = document.getElementById("navMenu");
+      if (!btn || !menu) return;
+
+      function setOpen(isOpen){
+        menu.classList.toggle("open", isOpen);
+        btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+      }
+
+      btn.addEventListener("click", (e) => {
+        e.stopPropagation();
+        setOpen(!menu.classList.contains("open"));
+      });
+
+      document.addEventListener("click", (e) => {
+        const open = menu.classList.contains("open");
+        if (!open) return;
+        if (!menu.contains(e.target) && !btn.contains(e.target)) setOpen(false);
+      });
+
+      menu.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setOpen(false)));
+
+      window.addEventListener("resize", () => {
+        if (window.matchMedia("(min-width:861px)").matches) setOpen(false);
+      });
+    })();
+  </script>
+</body>
+</html>
