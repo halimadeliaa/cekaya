@@ -8,8 +8,8 @@ export const modules = [
       { h: "Kenapa fintech muncul", p: "Karena kebutuhan layanan yang cepat, mudah, dan inklusif (jangkauan lebih luas)." },
       { h: "Contoh penerapan", p: "Pembayaran digital, pinjaman online, investasi, dan asuransi digital." },
     ],
-    video: { url: "https://www.youtube.com/embed/5RHmGwAoY88?html5=1&enablejsapi=1" },
-    infographic: { file: "FINTECH.png", label: "Unduh Infografis Modul 1 (PNG)" },
+    video: { url: "https://www.youtube.com/embed/bnKUd6G3f_4?html5=1&enablejsapi=1" },
+    infographic: { file: "grafis-modul1.png", label: "Unduh Infografis Modul 1 (PNG)" },
     quiz: [
       { q: "Fintech adalah ...", a: 1, c: ["Aplikasi chatting", "Teknologi untuk layanan keuangan", "Game online", "Editor foto"] },
       { q: "Salah satu manfaat fintech adalah ...", a: 2, c: ["Memperlambat transaksi", "Meningkatkan biaya", "Memudahkan akses layanan keuangan", "Mengurangi keamanan"] },
@@ -26,8 +26,8 @@ export const modules = [
       { h: "Investasi", p: "Contoh: reksadana online, saham, dan fitur investasi digital." },
       { h: "Asuransi (Insurtech)", p: "Contoh: pembelian polis online, klaim digital." },
     ],
-    video: { url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    infographic: { file: "assets/infografis/modul-2.png", label: "Unduh Infografis Modul 2 (PNG)" },
+    video: { url: "https://www.youtube.com/embed/DBur9km_5hE" },
+    infographic: { file: "grafis-modul2.png", label: "Unduh Infografis Modul 2 (PNG)" },
     quiz: [
       { q: "E-wallet termasuk jenis fintech ...", a: 0, c: ["Pembayaran", "Pinjaman", "Investasi", "Regulasi"] },
       { q: "P2P lending termasuk jenis fintech ...", a: 1, c: ["Pembayaran", "Pinjaman", "Keamanan", "Privasi"] },
@@ -43,8 +43,8 @@ export const modules = [
       { h: "Praktik aman", p: "Gunakan password kuat, aktifkan 2FA, jangan bagikan OTP, dan cek URL resmi." },
       { h: "Modus penipuan", p: "Phishing, social engineering, aplikasi palsu, dan tawaran yang tidak masuk akal." },
     ],
-    video: { url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    infographic: { file: "assets/infografis/modul-3.png", label: "Unduh Infografis Modul 3 (PNG)" },
+    video: { url: "https://www.youtube.com/embed/1nNR4b0oTGs" },
+    infographic: { file: "grafis-modul3.png", label: "Unduh Infografis Modul 3 (PNG)" },
     quiz: [
       { q: "OTP sebaiknya ...", a: 3, c: ["Diposting di story", "Dikirim ke teman", "Ditulis di chat", "Dirahasiakan"] },
       { q: "Phishing bertujuan untuk ...", a: 1, c: ["Meningkatkan sinyal", "Mencuri data/login", "Mempercepat internet", "Memperbaiki perangkat"] },
@@ -60,8 +60,8 @@ export const modules = [
       { h: "Hak konsumen", p: "Transparansi biaya, keamanan data, kanal pengaduan, dan informasi yang jelas." },
       { h: "Kalau ada masalah", p: "Hubungi CS resmi, simpan bukti, dan laporkan melalui kanal pengaduan yang tersedia." },
     ],
-    video: { url: "https://www.youtube.com/embed/dQw4w9WgXcQ" },
-    infographic: { file: "assets/infografis/modul-4.png", label: "Unduh Infografis Modul 4 (PNG)" },
+    video: { url: "https://www.youtube.com/embed/MyTveUZnSWY" },
+    infographic: { file: "grafis-modul4.png", label: "Unduh Infografis Modul 4 (PNG)" },
     quiz: [
       { q: "Regulasi dibuat untuk ...", a: 2, c: ["Menghambat inovasi", "Menyulitkan pengguna", "Melindungi konsumen", "Menghapus layanan"] },
       { q: "Saat bermasalah, langkah awal yang benar ...", a: 1, c: ["Sebar data pribadi", "Hubungi CS resmi & simpan bukti", "Transfer uang lagi", "Berikan OTP"] },
@@ -69,3 +69,4 @@ export const modules = [
     ]
   }
 ];
+
