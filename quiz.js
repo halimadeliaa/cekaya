@@ -37,6 +37,7 @@ export function mountQuiz(rootEl, questions, options = {}){
   let wrong = 0;
 
   let remaining = durationSeconds;
+  let elapsed = 0;
   let timerId = null;
   let startedAtMs = 0;
 
@@ -63,27 +64,37 @@ export function mountQuiz(rootEl, questions, options = {}){
   function startTimer(){
     stopTimer();
     startedAtMs = Date.now();
-
+  
+    // mulai dari 0 saat quiz dimulai
+    elapsed = 0;
+    remaining = durationSeconds;
+  
+    // set tampilan awal
+    const t0 = $("#qtimer", rootEl);
+    if (t0) t0.textContent = formatTime(elapsed);
+  
     timerId = setInterval(() => {
-      remaining -= 1;
-
+      elapsed += 1;
+      remaining = durationSeconds - elapsed;
+  
       const t = $("#qtimer", rootEl);
-      if (t) t.textContent = formatTime(remaining);
-
+      if (t) t.textContent = formatTime(elapsed);
+  
       const timeBar = $("#timeBar", rootEl);
       if (timeBar){
-        const used = durationSeconds - remaining;
-        const pct = Math.round((used / durationSeconds) * 100);
+        const pct = Math.round((elapsed / durationSeconds) * 100);
         timeBar.style.width = `${Math.min(100, Math.max(0, pct))}%`;
       }
-
-      if (remaining <= 0){
+  
+      if (elapsed >= durationSeconds){
+        elapsed = durationSeconds;
         remaining = 0;
         stopTimer();
         renderEnd(true);
       }
     }, 1000);
   }
+
 
   function shell(){
     return `
@@ -94,11 +105,8 @@ export function mountQuiz(rootEl, questions, options = {}){
               <div class="quiz-title">Kuis Interaktif</div>
               <div class="small">${moduleKey}</div>
             </div>
-            <div class="timer-pill">⏳ Waktu: <b id="qtimer">${formatTime(remaining)}</b></div>
+            <div class="timer-pill">⏱️ Waktu: <b id="qtimer">${formatTime(durationSeconds - remaining)}</b></div>
           </div>
-
-          <div class="small" style="margin-top:10px;font-weight:700">Progress waktu</div>
-          <div class="progress"><div id="timeBar" style="width:0%"></div></div>
 
           <div class="small" style="margin-top:10px;font-weight:700">Progress soal</div>
           <div class="progress"><div id="qBar" style="width:0%"></div></div>
@@ -277,13 +285,6 @@ export function mountQuiz(rootEl, questions, options = {}){
         <div class="item"><b>${usedLabel}</b><span class="small">Waktu terpakai</span></div>
       </div>
 
-      <div class="card soft" style="margin-top:12px">
-        <p style="margin:0"><b>Sisa waktu:</b> ${remainLabel}</p>
-        <p class="small" style="margin:8px 0 0">
-          Kamu bisa ulangi kuis untuk memperbaiki hasil.
-        </p>
-      </div>
-
       <div class="btns" style="margin-top:12px">
         <button class="btn primary" id="btnRetry" type="button">Ulangi Kuis</button>
         <a class="btn" href="course.html">Kembali ke Course</a>
@@ -317,3 +318,4 @@ export function mountQuiz(rootEl, questions, options = {}){
 
   renderStart();
 }
+
