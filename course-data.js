@@ -154,11 +154,12 @@ export const modules = [
     sections: [
       {
         h: "Pendahuluan",
-        p: "Kemudahan layanan Financial Technology (Fintech) telah mengubah cara masyarakat melakukan transaksi keuangan, mulai dari pembayaran digital, pinjaman online, hingga investasi. Namun, di balik kemudahan tersebut, terdapat risiko serius berupa kebocoran data dan penipuan transaksi keuangan."
+        p: "Kemudahan layanan Financial Technology (Fintech) telah mengubah cara masyarakat melakukan transaksi keuangan, mulai dari pembayaran digital, pinjaman online, hingga investasi. Namun, di balik kemudahan tersebut, terdapat risiko serius berupa kebocoran data dan penipuan transaksi keuangan. Tidak sedikit kasus di mana data pribadi disalahgunakan dan berujung pada kerugian finansial. Oleh karena itu, pemahaman tentang keamanan digital dan privasi dalam fintech menjadi hal yang sangat penting."
       },
       {
         h: "Pentingnya Keamanan Digital dalam Fintech",
-        p: "Keamanan digital merupakan fondasi utama dalam sistem fintech. Setiap transaksi keuangan melibatkan data sensitif seperti nomor identitas, data rekening, hingga informasi biometrik."
+        p: "Keamanan digital merupakan fondasi utama dalam sistem fintech. Setiap transaksi keuangan melibatkan data sensitif seperti nomor identitas, data rekening, hingga informasi biometrik.Keamanan digital bertujuan untuk: Melindungi data pribadi pengguna; Menjaga kerahasiaan transaksi keuangan; Mencegah akses ilegal dan penyalahgunaan data; Membangun kepercayaan antara pengguna dan penyedia layanan fintech."
+        p: "Tanpa sistem keamanan yang kuat, risiko pencurian data dan kejahatan siber akan semakin meningkat."
       },
       {
         h: "Ancaman Keamanan pada Fintech",
