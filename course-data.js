@@ -159,7 +159,6 @@ export const modules = [
       {
         h: "Pentingnya Keamanan Digital dalam Fintech",
         p: "Keamanan digital merupakan fondasi utama dalam sistem fintech. Setiap transaksi keuangan melibatkan data sensitif seperti nomor identitas, data rekening, hingga informasi biometrik.Keamanan digital bertujuan untuk: Melindungi data pribadi pengguna; Menjaga kerahasiaan transaksi keuangan; Mencegah akses ilegal dan penyalahgunaan data; Membangun kepercayaan antara pengguna dan penyedia layanan fintech.",
-        p: "Tanpa sistem keamanan yang kuat, risiko pencurian data dan kejahatan siber akan semakin meningkat."
       },
       {
         h: "Ancaman Keamanan pada Fintech",
