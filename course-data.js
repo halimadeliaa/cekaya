@@ -2,71 +2,140 @@ export const modules = [
   {
     id: "1",
     title: "Apa itu Fintech",
-    desc: "Pengertian, manfaat, dan peran fintech dalam layanan keuangan.",
+    desc: "Financial Technology sebagai inovasi layanan keuangan modern.",
     sections: [
-      { h: "Definisi fintech", p: "Fintech (financial technology) adalah penggunaan teknologi untuk meningkatkan atau menyederhanakan layanan keuangan." },
-      { h: "Kenapa fintech muncul", p: "Karena kebutuhan layanan yang cepat, mudah, dan inklusif (jangkauan lebih luas)." },
-      { h: "Contoh penerapan", p: "Pembayaran digital, pinjaman online, investasi, dan asuransi digital." },
+      {
+        h: "Financial Technology: Inovasi Cerdas untuk Transaksi Praktis dan Aman",
+        p: "Di era di mana segala sesuatu bergerak dengan kecepatan internet, sektor keuangan pun mengalami transformasi besar. Jika dahulu transfer uang dan pembayaran tagihan mengharuskan antre di bank atau loket pembayaran, kini semua dapat dilakukan hanya melalui beberapa ketukan di layar ponsel. Transformasi inilah yang dikenal sebagai Financial Technology atau Fintech."
+      },
+      {
+        h: "Memahami Definisi Fintech",
+        p: "Fintech merupakan gabungan dari kata Financial (keuangan) dan Technology (teknologi). Fintech adalah inovasi yang memanfaatkan teknologi modern untuk meningkatkan, menyederhanakan, dan mengotomatisasi layanan keuangan. Tujuan utama fintech bukan menggantikan bank konvensional, melainkan melengkapi dan menjangkau masyarakat yang sebelumnya sulit mengakses layanan perbankan."
+      },
+      {
+        h: "Peran dan Manfaat Fintech",
+        p: "Fintech menawarkan efisiensi, kecepatan, kemudahan akses, serta transparansi. Proses birokrasi yang panjang dapat dipangkas menjadi sistem digital yang lebih ringkas, sehingga masyarakat dapat mengelola keuangan dengan lebih praktis."
+      },
+      {
+        h: "Empat Pilar Utama dalam Ekosistem Fintech",
+        p: "Empat pilar utama fintech meliputi: (1) Wealth Management yang memudahkan investasi dengan modal terjangkau, (2) Digital Payment seperti e-wallet dan QRIS yang mendukung transaksi non-tunai, (3) Peer-to-Peer Lending sebagai alternatif pembiayaan bagi UMKM, dan (4) Crowdfunding yang memfasilitasi penggalangan dana untuk tujuan sosial maupun bisnis."
+      },
+      {
+        h: "Pentingnya Fintech bagi Masyarakat",
+        p: "Fintech berperan besar dalam meningkatkan inklusi keuangan, khususnya di wilayah yang sulit dijangkau perbankan. Selama ada koneksi internet, masyarakat dapat mengakses layanan keuangan. Namun, pemanfaatan fintech harus diimbangi dengan literasi keuangan agar pengguna dapat memanfaatkannya secara bijak."
+      }
     ],
     video: { url: "https://www.youtube.com/embed/bnKUd6G3f_4?html5=1&enablejsapi=1" },
     infographic: { file: "grafis-modul1.png", label: "Unduh Infografis Modul 1 (PNG)" },
     quiz: [
       { q: "Fintech adalah ...", a: 1, c: ["Aplikasi chatting", "Teknologi untuk layanan keuangan", "Game online", "Editor foto"] },
-      { q: "Salah satu manfaat fintech adalah ...", a: 2, c: ["Memperlambat transaksi", "Meningkatkan biaya", "Memudahkan akses layanan keuangan", "Mengurangi keamanan"] },
-      { q: "Contoh fintech adalah ...", a: 0, c: ["E-wallet", "Pemutar musik", "Kalkulator", "Kamera"] },
+      { q: "Tujuan utama fintech adalah ...", a: 2, c: ["Menggantikan bank sepenuhnya", "Meningkatkan birokrasi", "Memberikan layanan keuangan yang efisien dan mudah", "Mengurangi akses masyarakat"] },
+      { q: "Salah satu peran fintech adalah ...", a: 0, c: ["Meningkatkan inklusi keuangan", "Menghambat transaksi", "Menambah biaya", "Menghilangkan regulasi"] },
     ]
   },
+
   {
     id: "2",
     title: "Jenis-jenis Fintech & Contohnya",
-    desc: "Kenali kategori fintech: pembayaran, pinjaman, investasi, asuransi, dan lainnya.",
+    desc: "Beragam kategori fintech yang sering digunakan dalam kehidupan sehari-hari.",
     sections: [
-      { h: "Pembayaran (Payment)", p: "Contoh: e-wallet, QRIS, payment gateway." },
-      { h: "Pinjaman (Lending)", p: "Contoh: P2P lending, paylater (gunakan dengan bijak)." },
-      { h: "Investasi", p: "Contoh: reksadana online, saham, dan fitur investasi digital." },
-      { h: "Asuransi (Insurtech)", p: "Contoh: pembelian polis online, klaim digital." },
+      {
+        h: "Fintech dalam Kehidupan Sehari-hari",
+        p: "Fintech telah menjadi bagian penting dalam kehidupan modern. Layanan keuangan berbasis teknologi ini memudahkan transaksi, pembiayaan, investasi, hingga pengelolaan dana secara cepat dan efisien."
+      },
+      {
+        h: "Digital Payment & Dompet Digital",
+        p: "Digital payment adalah metode pembayaran non-tunai yang dilakukan secara elektronik. Contohnya adalah dompet digital seperti GoPay, OVO, DANA, ShopeePay, dan LinkAja yang digunakan untuk belanja online, transportasi, pembayaran tagihan, dan transfer uang."
+      },
+      {
+        h: "Peer-to-Peer (P2P) Lending",
+        p: "P2P Lending mempertemukan pemberi pinjaman dan peminjam secara langsung melalui platform digital. Contohnya KoinWorks, Investree, Modalku, dan Amartha yang membantu UMKM memperoleh pembiayaan dengan proses yang lebih cepat."
+      },
+      {
+        h: "Wealth Tech & Investasi Digital",
+        p: "Wealth Tech berfokus pada pengelolaan kekayaan dan investasi digital. Platform seperti Bibit, Ajaib, Bareksa, dan Stockbit menyediakan fitur edukasi, analisis, serta kemudahan transaksi investasi."
+      },
+      {
+        h: "Jenis Fintech Lainnya",
+        p: "Selain itu, terdapat InsurTech (asuransi digital seperti PasarPolis dan Qoala), Blockchain & Cryptocurrency (Bitcoin, Ethereum), Fintech Syariah (Ammana, ALAMI), Robo-Advisor, dan Crowdfunding seperti Kitabisa."
+      }
     ],
     video: { url: "https://www.youtube.com/embed/DBur9km_5hE" },
     infographic: { file: "grafis-modul2.png", label: "Unduh Infografis Modul 2 (PNG)" },
     quiz: [
-      { q: "E-wallet termasuk jenis fintech ...", a: 0, c: ["Pembayaran", "Pinjaman", "Investasi", "Regulasi"] },
-      { q: "P2P lending termasuk jenis fintech ...", a: 1, c: ["Pembayaran", "Pinjaman", "Keamanan", "Privasi"] },
-      { q: "Insurtech berkaitan dengan ...", a: 2, c: ["Transportasi", "E-commerce", "Asuransi", "Pendidikan"] },
+      { q: "Dompet digital termasuk jenis fintech ...", a: 0, c: ["Digital payment", "Investasi", "Pinjaman", "Asuransi"] },
+      { q: "P2P Lending bertujuan untuk ...", a: 1, c: ["Menghibur pengguna", "Menghubungkan peminjam dan pemberi pinjaman", "Menyimpan data", "Mengatur regulasi"] },
+      { q: "Contoh platform Wealth Tech adalah ...", a: 2, c: ["Gojek", "OVO", "Bibit", "WhatsApp"] },
     ]
   },
+
   {
     id: "3",
     title: "Keamanan Digital & Privasi",
-    desc: "Cara menjaga akun, data pribadi, dan menghindari penipuan digital.",
+    desc: "Pentingnya menjaga data pribadi dan keamanan transaksi fintech.",
     sections: [
-      { h: "Data pribadi itu apa?", p: "Informasi yang bisa mengidentifikasi kamu: NIK, nomor rekening, OTP, PIN, dan kata sandi." },
-      { h: "Praktik aman", p: "Gunakan password kuat, aktifkan 2FA, jangan bagikan OTP, dan cek URL resmi." },
-      { h: "Modus penipuan", p: "Phishing, social engineering, aplikasi palsu, dan tawaran yang tidak masuk akal." },
+      {
+        h: "Mengapa Keamanan Digital Itu Penting?",
+        p: "Setiap transaksi fintech melibatkan data sensitif seperti identitas pribadi dan informasi keuangan. Keamanan digital bertujuan melindungi data pengguna, menjaga kerahasiaan transaksi, dan mencegah kejahatan siber."
+      },
+      {
+        h: "Ancaman Keamanan Digital",
+        p: "Ancaman yang sering terjadi meliputi phishing, peretasan (hacker), pencurian identitas digital, malware, dan social engineering. Ancaman ini dapat menyebabkan kerugian finansial dan kebocoran data."
+      },
+      {
+        h: "Risiko Privasi dalam Fintech",
+        p: "Risiko privasi mencakup penyalahgunaan data, kebocoran data, pengumpulan data berlebihan, dan penyebaran data ke pihak ketiga tanpa transparansi."
+      },
+      {
+        h: "Cara Fintech Menjaga Keamanan",
+        p: "Penyedia fintech menerapkan enkripsi data, autentikasi ganda (2FA), sistem deteksi fraud, serta kepatuhan terhadap regulasi OJK untuk menjaga keamanan dan privasi pengguna."
+      },
+      {
+        h: "Tips Aman bagi Pengguna",
+        p: "Pengguna disarankan menggunakan password kuat, menjaga kerahasiaan OTP, menghindari tautan mencurigakan, mengunduh aplikasi dari sumber resmi, dan rutin memperbarui sistem keamanan."
+      }
     ],
     video: { url: "https://www.youtube.com/embed/1nNR4b0oTGs" },
     infographic: { file: "grafis-modul3.png", label: "Unduh Infografis Modul 3 (PNG)" },
     quiz: [
-      { q: "OTP sebaiknya ...", a: 3, c: ["Diposting di story", "Dikirim ke teman", "Ditulis di chat", "Dirahasiakan"] },
-      { q: "Phishing bertujuan untuk ...", a: 1, c: ["Meningkatkan sinyal", "Mencuri data/login", "Mempercepat internet", "Memperbaiki perangkat"] },
-      { q: "Cara aman adalah ...", a: 0, c: ["Aktifkan 2FA", "Password '1234'", "Klik semua link promo", "Share PIN"] },
+      { q: "OTP sebaiknya ...", a: 3, c: ["Dibagikan ke teman", "Disimpan di chat", "Diposting di media sosial", "Dirahasiakan"] },
+      { q: "Phishing bertujuan untuk ...", a: 1, c: ["Meningkatkan keamanan", "Mencuri data pribadi", "Mempercepat transaksi", "Menghapus akun"] },
+      { q: "Salah satu cara aman menggunakan fintech adalah ...", a: 0, c: ["Aktifkan 2FA", "Password mudah ditebak", "Klik semua promo", "Berbagi PIN"] },
     ]
   },
+
   {
     id: "4",
     title: "Regulasi & Perlindungan Konsumen",
-    desc: "Kenali hak konsumen dan langkah saat terjadi masalah pada layanan digital.",
+    desc: "Aturan main fintech dan perlindungan bagi pengguna.",
     sections: [
-      { h: "Kenapa regulasi penting", p: "Agar layanan fintech punya standar dan melindungi pengguna." },
-      { h: "Hak konsumen", p: "Transparansi biaya, keamanan data, kanal pengaduan, dan informasi yang jelas." },
-      { h: "Kalau ada masalah", p: "Hubungi CS resmi, simpan bukti, dan laporkan melalui kanal pengaduan yang tersedia." },
+      {
+        h: "Peran Otoritas Jasa Keuangan (OJK)",
+        p: "OJK berperan sebagai regulator dan pengawas layanan keuangan di Indonesia. OJK memastikan perusahaan fintech beroperasi secara legal, transparan, dan melindungi konsumen."
+      },
+      {
+        h: "Prinsip 2L: Legal dan Logis",
+        p: "Pengguna harus memastikan fintech yang digunakan legal (terdaftar di OJK) dan logis (tidak menjanjikan keuntungan tidak masuk akal). Prinsip ini membantu menghindari penipuan."
+      },
+      {
+        h: "Perlindungan Data Pribadi",
+        p: "Fintech legal tidak diperbolehkan mengakses kontak dan galeri pengguna. Akses hanya diperbolehkan pada fitur tertentu seperti kamera, mikrofon, dan lokasi sesuai ketentuan."
+      },
+      {
+        h: "Hak Konsumen dan Pengaduan",
+        p: "Konsumen berhak atas transparansi biaya, keamanan data, dan layanan pengaduan. Jika terjadi masalah, pengguna dapat menghubungi Kontak OJK 157 atau melaporkan melalui Indonesia Anti-Scam Centre (IASC)."
+      },
+      {
+        h: "Menjadi Pengguna Fintech yang Cerdas",
+        p: "Dengan memahami regulasi dan hak konsumen, pengguna dapat memanfaatkan fintech secara aman, nyaman, dan bertanggung jawab."
+      }
     ],
     video: { url: "https://www.youtube.com/embed/MyTveUZnSWY" },
     infographic: { file: "grafis-modul4.png", label: "Unduh Infografis Modul 4 (PNG)" },
     quiz: [
-      { q: "Regulasi dibuat untuk ...", a: 2, c: ["Menghambat inovasi", "Menyulitkan pengguna", "Melindungi konsumen", "Menghapus layanan"] },
-      { q: "Saat bermasalah, langkah awal yang benar ...", a: 1, c: ["Sebar data pribadi", "Hubungi CS resmi & simpan bukti", "Transfer uang lagi", "Berikan OTP"] },
-      { q: "Transparansi biaya termasuk ...", a: 0, c: ["Hak konsumen", "Iklan", "Penipuan", "Privasi"] },
+      { q: "OJK berfungsi untuk ...", a: 2, c: ["Menghambat inovasi", "Menghapus fintech", "Melindungi konsumen", "Menjual produk"] },
+      { q: "Prinsip 2L berarti ...", a: 1, c: ["Lambat dan Lengkap", "Legal dan Logis", "Loyal dan Legal", "Lengkap dan Laris"] },
+      { q: "Jika mengalami penipuan fintech, langkah yang benar adalah ...", a: 3, c: ["Diam saja", "Sebar data pribadi", "Transfer ulang", "Melapor ke OJK / IASC"] },
     ]
   }
 ];
-
